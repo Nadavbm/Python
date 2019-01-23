@@ -34,6 +34,41 @@ print(type(1))
 print(type("a"))
 print(type(2+3j))
 
+# Using strings:
+name = "Nadav"
+age = 35
+print("Hello! My name is %s." % name)
+print("Hello! My name is %s and I am %d years old." % (name, age))
+print(’This is one line.\nThis is another line.’)
+"""
+\\ literal backslash
+\’ single quote
+\" double quote
+\n newline
+\t tab
+"""
+
+name = "Shipudei Afuli"
+# Find the length of a string with the built-in len function
+print(len(name))
+# Print the string converted to lowercase
+print(name.lower())
+
+# Converting integer to string:
+print("My number is " + str(3))
+print("My number is %d" % 3)
+
+""" Integer operators:
+Addition: +
+Subtraction: -
+Multiplication: *
+Division: //
+Modulus (remainder): %
+Exponent (power): **
+
+The system will first handle brackets (), then **, then *, // and %, and finally + and -
+"""
+
 # Global variable:
 a = 0
 def my_func():
@@ -142,89 +177,3 @@ else:
     print("Unknown shortcut: %s" % short)
 
 # Lists
-
-
-
-
-# Detect errors:
-try:
-height = int(input("Enter height of rectangle: "))
-width = int(input("Enter width of rectangle: "))
-except ValueError as e: # if a value error occurs, we will skip to this point
-print("Error reading height and width: %s" % e)
-# Add this block to while loop:
-correct_input = False # this is a boolean value -- it can be either true or false.
-while not correct_input: # this is a while loop
-    try:
-        height = int(input("Enter height of rectangle: "))
-        width = int(input("Enter width of rectangle: "))
-    except ValueError:
-        print("Please enter valid integers for the height and width.")
-    else: # this will be executed if there is no value error
-        correct_input = True
-# See results:
-print("The area of the rectangle is %d" % (width * height))
-
-
-# Print to a file:
-with open(’file1.txt’, ’w’) as file1:
-print("Hello!", file=file1)
-# Can be used with read or write methods:
-with open(’file1.txt’, ’w’) as file1:
-file1.write("Hello!")
-
-
-# Using strings:
-name = "Nadav"
-age = 35
-print("Hello! My name is %s." % name)
-print("Hello! My name is %s and I am %d years old." % (name, age))
-print(’This is one line.\nThis is another line.’)
-"""
-\\ literal backslash
-\’ single quote
-\" double quote
-\n newline
-\t tab
-"""
-
-name = "Shipudei Afuli"
-# Find the length of a string with the built-in len function
-print(len(name))
-# Print the string converted to lowercase
-print(name.lower())
-
-# Converting integer to string:
-print("My number is " + str(3))
-print("My number is %d" % 3)
-
-""" Integer operators:
-Addition: +
-Subtraction: -
-Multiplication: *
-Division: //
-Modulus (remainder): %
-Exponent (power): **
-
-The system will first handle brackets (), then **, then *, // and %, and finally + and -
-"""
-
-
-
-# Indentation:
-def kebab_day(day):
-    if day == "monday":
-        return "This is my kebab day"
-    if day != "monday":
-        return "Today I eat shipud"
-
-print(kebab_day("sunday"))
-print(kebab_day("monday"))
-
-
-no_chickens = "No chickens here ..."
-def append_chickens(text):
-    text = text + " Rawwwk!"
-    return text
-
-print(append_chickens(no_chickens))
