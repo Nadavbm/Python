@@ -1,8 +1,7 @@
+import sys
 import winrm
 
 session = winrm.Session('10.1.1.1', auth=('administrator', 'Pas$$w0rd'))
-
-service = raw_input('Which service would you like to stop? ')
 
 def list_service():
     list = session.run_ps('Get-Service')
@@ -28,3 +27,14 @@ def check_ip():
     ipcheck = session.run_cmd('ipconfig', ['/all'])
     output = ipcheck.std_out
     print(output)
+
+def main():
+    command = sys.argv[1]
+    if command == 'check_ip':
+        check_ip()
+    if command == 'list_service':
+        list_service()
+    else:
+        print("The script should run with arguments")
+
+main()
