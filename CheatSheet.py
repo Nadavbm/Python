@@ -19,7 +19,6 @@ def vorname():
 vorname()
 
 # Python data-types: integer, float, complex, string, boolean
-
 # Variables:
 x = 3
 str = "Hello"
@@ -28,7 +27,6 @@ count, result, total = 0, 0, 0
 # Add 1 or minus 1:
 count += 1
 # All assignment operators: += , -= , *= , /= , %=
-
 # Determine the type of a variable:
 print(type(1))
 print(type("a"))
@@ -39,25 +37,21 @@ name = "Nadav"
 age = 35
 print("Hello! My name is %s." % name)
 print("Hello! My name is %s and I am %d years old." % (name, age))
-print(’This is one line.\nThis is another line.’)
+print('This is one line.\nThis is another line.')
 """
 \\ literal backslash
-\’ single quote
+\' single quote
 \" double quote
 \n newline
 \t tab
 """
-
 name = "Shipudei Afuli"
-# Find the length of a string with the built-in len function
-print(len(name))
-# Print the string converted to lowercase
-print(name.lower())
-
+print(len(name)) # Find the length of a string with the built-in len functio
+print(name.lower()) # Print the string converted to lowercase
 # Converting integer to string:
 print("My number is " + str(3))
 print("My number is %d" % 3)
-
+# Using integers
 """ Integer operators:
 Addition: +
 Subtraction: -
@@ -65,10 +59,8 @@ Multiplication: *
 Division: //
 Modulus (remainder): %
 Exponent (power): **
-
 The system will first handle brackets (), then **, then *, // and %, and finally + and -
 """
-
 # Global variable:
 a = 0
 def my_func():
@@ -104,7 +96,6 @@ int(float("3.5"))
 # Selection control statements:
 if name == "Kebab":
     print("Hello Kebab!")
-
 if (x > 4):
     x -= 1
 # Using is or is not:
@@ -159,7 +150,7 @@ if age < 18 or age > 80:
 # not operator
 name = raw_input('Enter your name: ')
 if not name.startswith("N"):
-    print("’%s’ doesn’t start with N!" % name)
+    print("'%s' doesn't start with N!" % name)
 # more not operator:
 if not x == 5:
     x += 1
@@ -171,9 +162,84 @@ NAMES = {
 "BA": "Bar Ashipudi",
 "SN": "Sar Netanyahu", # Trailing commas like this are allowed in Python!
 }
-if short in NAMES: # this tests whether the variable is one of the dictionary’s keys
+if short in NAMES: # this tests whether the variable is one of the dictionary's keys
     print("Name: %s" % NAMES[short])
 else:
     print("Unknown shortcut: %s" % short)
 
-# Lists
+# Lists:
+# a list of strings
+food = ['kebab', 'shipud', 'boesh', 'hagav']
+# a list of integers
+numbers = [13124, 3217, 343, 212, 1]
+# an empty list
+empty_list = []
+# a list of variables we defined somewhere else
+vars = [
+var1,
+var2,
+var3, # this trailing comma is legal in Python
+]
+# Call list objects
+print(food[0]) # Will print kebab
+print(numbers[3]) # 212
+# Count from the end
+print(food[-1]) # the last element hagav
+print(numbers[-2]) # 212
+# Use slices:
+print(food[0:2]) # Shipud ve Kebab ahi
+print(food[1:-2]) # Shipud ve boesh
+print(food[:2]) # Shipud ve Kebab
+# Modify add and remove from list:
+food[3] = "hummus"
+food.append("chips")
+del food[2]
+# Can contain few data types:
+list = ['str', 12, 321.21]
+# Find number:
+numbers = [123, 321, 32, 1122, 435]
+some_number = 32
+if number in numbers:"
+    print("I have %d" % number)
+if number not in numbers:
+    print("%d did let you win the lottery" % number)
+# List methods and functions:
+len(some_list) # Length of a List
+sum(number) # Sum of a List
+any([1,0,1,0,1]) # Are nay of these True?
+numbers = [4, 5, 6, 7, 8]
+numbers.append(5)
+print(numbers) # 4,5,6,7,8,5
+numbers.count(6) # Return 1 if exist 0 if not
+numbers.extend([56, 2, 12])
+print(numbers) # 4,5,6,7,8,5,56,2,12
+numbers.index(56) # value = 6
+numbers.index(95) # This is an error
+numbers.insert(4, 45) # 4,5,6,7,45,8,5,56,2,12
+numbers.remove(56) # Remove element by its value
+# Set new list and check more functions:
+numbers = [6, 2, 3, 5, 1, 4]
+print(sorted(numbers))
+print(list(reversed(numbers)))
+# Or do it like this:
+numbers.sort()
+print(numbers)
+numbers.reverse()
+print(numbers)
+# Arithemtic operators abd list:
+print([1, 2, 3] + [4, 5, 6])  # output: [1, 2, 3, 4, 5, 6]
+print([1, 2, 3] * 3) # output: [1, 2, 3, 1, 2, 3, 1, 2, 3]
+
+# Tuples:
+WEEKDAYS = ('Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday')
+print(WEEKDAYS[0])
+print(WEEKDAYS[3:])
+WEEKDAYS.index('Tuesday')
+WEEKDAYS.remove('Sunday')
+WEEKDAYS.append('Sunday')
+print("%d %d %d" % (1, 2, 3))
+
+# Sets:
+food = {'shishkebab', 'chips', 'orez'}
+print(sorted(food))
+even_numbers = {2, 4, 6, 8, 10}
