@@ -243,3 +243,12 @@ print("%d %d %d" % (1, 2, 3))
 food = {'shishkebab', 'chips', 'orez'}
 print(sorted(food))
 even_numbers = {2, 4, 6, 8, 10}
+a = {} # this is an empty dictionary
+b = set() # this is how we make an empty set
+
+# Ranges:
+print(list(range(10))) # print the integers from 0 to 9
+print(list(range(5, 14))) # print the integers from 5 to 13
+print(list(range(1, 11, 2))) # print the odd integers from 1 to 10
+
+# Dictionaries:
