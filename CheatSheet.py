@@ -48,6 +48,9 @@ print('This is one line.\nThis is another line.')
 name = "Shipudei Afuli"
 print(len(name)) # Find the length of a string with the built-in len functio
 print(name.lower()) # Print the string converted to lowercase
+print(name.index("a"))
+print(name[0])
+print(name[3:5])
 # Converting integer to string:
 print("My number is " + str(3))
 print("My number is %d" % 3)
@@ -252,3 +255,88 @@ print(list(range(5, 14))) # print the integers from 5 to 13
 print(list(range(1, 11, 2))) # print the odd integers from 1 to 10
 
 # Dictionaries:
+menu = {"Rahat": 31, "Lakum": 42, "Sitvanit": 21}
+contact = {
+    "name": "Fuerte Venturi",
+    "age": 1042,
+    "address": "Somewhere"
+}
+print(menu["Lakum"])
+print(contact["name"])
+# modify a value
+menu["Sitvanit"] += 13
+contact["name"] = "Fuerti V. Venturi Sambuka"
+menu.get("Rahat")
+menu.update({"Shipudi": 41, "Hazil": 312})
+menu.keys()
+menu.values()
+menu.items()
+print("Pizuhim" not in menu)
+veg = list(menu)
+keb = tuple(menu.values())
+set = set(menu.items())
+
+# Loop control statements:
+# While loop - event-controlled loop statement. Initialisation -> Condition -> Update
+total = 0
+i = 1
+while i <= 10:
+    total += i
+    i += 1
+# sum the squares of integers until it exceed 200:
+def count_square():
+    total = 0
+    num = 1
+    while total < 200:
+        total = total + num**2
+        num += 1
+    print("The last number is %d and the sum of all squares is %d" % (num, total))
+
+count_square()
+# Guess word function with while loop:
+def guess_word():
+    word = "pizza"
+    i = 1
+    while i <= 10 or guess == word:
+        guess = raw_input("Guess a word: ")
+        i += 1
+        if word == guess:
+            print("You guess correct that the word is %s" %word)
+            break
+        else:
+            print("It's not %s" %guess)
+
+guess_word()
+
+# For Loop - Loop with a predefined number of events
+for i in range(11,24):
+    print(i)
+# From a list:
+food  = ["kebab", "pizza", "hamin"]
+for dish in food:
+    print(dish)
+# More comlex way to do the same thing:
+for i in range(len(food)):
+    dish = food[i]
+    print(dish)
+# Use enumerate - This one will output all capital letters in food:
+for i, dish in enumerate(food):
+    food[i] = dish.upper()
+    print(dish)
+# Calculate sum of 1 - 10:
+def calc_sum():
+    sum = 0
+    for i in range(1,10):
+        sum = sum + i
+    print("The sum of all number from 1 to 10 is: %d" %sum)
+
+calc_sum()
+# Factorial number loop:
+def factorial_num():
+    num = int(raw_input('Choose a number: '))
+    factorial = 1
+    for i in range(num,0,-1):
+        factorial*=i
+    print("The factorial number of %d is %d" % (num, factorial))
+
+factorial_num()
