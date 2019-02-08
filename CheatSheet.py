@@ -107,7 +107,7 @@ if x < 3:
 else:
     print("x != 3")
 # Nested if statement:
-kebabs = raw_input('how many kebabs would you like to eat? ')
+kebabs = int(raw_input('how many kebabs would you like to eat? '))
 if kebabs <= 10:
     if kebabs <= 3:
         cost = 3*kebabs
@@ -164,11 +164,8 @@ else:
     print("Unknown shortcut: %s" % short)
 
 # Lists:
-# a list of strings
 food = ['kebab', 'shipud', 'boesh', 'hagav']
-# a list of integers
 numbers = [13124, 3217, 343, 212, 1]
-# an empty list
 empty_list = []
 # a list of variables we defined somewhere else
 vars = [
@@ -195,7 +192,7 @@ list = ['str', 12, 321.21]
 # Find number:
 numbers = [123, 321, 32, 1122, 435]
 some_number = 32
-if number in numbers:"
+if number in numbers:
     print("I have %d" % number)
 if number not in numbers:
     print("%d did let you win the lottery" % number)
