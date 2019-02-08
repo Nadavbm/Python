@@ -330,3 +330,30 @@ def factorial_num():
     print("The factorial number of %d is %d" % (num, factorial))
 
 factorial_num()
+# Prompt user and calculate sum of floats:
+def prompt_sum():
+    sum = 0.0
+    count = 0.0
+    for i in range(1,11):
+        addfloat = float(raw_input('Write a float here: '))
+        sum += addfloat
+        count += 1
+    print('the sum of all floats is: %d' % sum)
+    print('the average of all floats is: %d' % (float(sum) // float(count)))
+
+prompt_sum()
+# Do the same with empty List
+def list_promptsum():
+    sum = 0.0
+    count = 0.0
+    list = []
+    for i in range(1,11):
+        addfloat = float(raw_input('Write a float here: '))
+        list.append(addfloat)
+        count +=1
+    for j in list:
+        sum += j
+    print('the sum of all floats is: %d' % sum)
+    print('the average of all floats is: %d' % (float(sum) // float(count)))
+
+list_promptsum()
