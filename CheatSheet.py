@@ -56,12 +56,7 @@ print("My number is " + str(3))
 print("My number is %d" % 3)
 # Using integers
 """ Integer operators:
-Addition: +
-Subtraction: -
-Multiplication: *
-Division: //
-Modulus (remainder): %
-Exponent (power): **
+Addition: + ## Subtraction: - ## Multiplication: * ## Division: // ## Modulus (remainder): % ## Exponent (power): **
 The system will first handle brackets (), then **, then *, // and %, and finally + and -
 """
 # Global variable:
@@ -92,8 +87,6 @@ print("3%d" % 2) # will give 32
 print("3%d" % 2)
 print(int("3") + 8) # will give 11
 print("3" + str(8))
-# More conversions:
-int("6")
 int(float("3.5"))
 
 # Selection control statements:
