@@ -1,0 +1,10 @@
+version: '3.4'
+
+services:
+   flask-api:
+     build: .
+     volumes:
+       - ./app:/app
+     ports: 
+       - 5000:5000
+#     expose: ["5000"]
