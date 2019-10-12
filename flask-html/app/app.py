@@ -7,8 +7,10 @@ redis = Redis(host='redis',port=6379)
 
 @app.route('/')
 def shlaom():
-    return render_template('index.html') 
+    redis.incr('hits')
+    return render_template('index.html', visitor=redis.get('hits'))
 
+@app.route('/visitor')
 def mevakrim():
     redis.incr('hits')    
     return redis.get('hits')
