@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <table border = 2>
+	{% for key, value in address.items() %}
+	  <tr>
+		<th> {{ key }} </th>
+		<td> {{ value }} </td>
+	  </tr>
+	{% endfor %}
+  </table>
+  </p><br>You coordinates are</br></p>
+  {{ coordinate }}
+</body>
+</html>
