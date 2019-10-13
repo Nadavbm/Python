@@ -5,7 +5,7 @@ services:
    ports:
      - "5000:5000"
    volumes:
-     - .:/flask-html-form/app
+     - .:/flask/html-form/app
    depends_on:
      - redis
 

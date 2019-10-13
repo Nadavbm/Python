@@ -7,8 +7,8 @@
 <html>
 <body>
   <h1>HTML-FLASK FORM</h1>
-  <p>Shalom laBenadam ha {{ visitor }} SheRoeh et haFlask HaBeseder Haze</p>
-  <h3>Give your address and I'll get you the coordinates for it</h3>
+  <p>You are the {{ visitor }} Visitor in this coordinate interperter</p>
+  <p>Fill in the form and get the coordinates for the desired address:</p>
   <form action= "http://localhost:5000/address" method = "POST">
 	<p>Street <input type = "text" name = "Street" /></p>
 	<p>Number <input type = "text" name = "Number" /></p>

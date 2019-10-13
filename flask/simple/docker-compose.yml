@@ -5,7 +5,7 @@ services:
    ports:
      - "5000:5000"
    volumes:
-     - .:/simple-flask/app
+     - .:/flask/simple/app
    depends_on:
      - redis
 
