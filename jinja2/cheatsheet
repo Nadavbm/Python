@@ -1,0 +1,103 @@
+Jinja2 CheatSheet
+=================
+
+Syntax:
+-------
+{% ... %}							## Statement
+{{ ... }}							## Experessions
+{# ... #}							## Comments
+#  ... ##							## Line statements
+
+Variables:
+----------
+{{ var.attr }}						## Variable and its attributes - function like (getattr(var, 'attr'))
+{{ list['obj'] }}					## Function like (var.__getitem__('attr'))
+
+{{ var|filter|attr }}				## To filter attributes from veriables - (attr(filter(var))) 
+{{ var|func(arg1,arg2) }}			## Use function with arguments
+
+Assignments:
+------------
+{% set navigation = [('index.html', 'Index'), ('about.html', 'About')] %}
+
+Tests and if statements:
+------------------------
+{% if var.attr is smthg %}			## Test a variable against some expression
+{% if arr.quant is dividedid(3) %}	
+
+{% if user.paid %}					## If then else and elif
+    User have subscription
+{% elif user.trial %}
+    Still in trial for 12 month
+{% else %}
+    User didn't pay and finish trial
+{% endif %}
+
+For loops:
+----------
+{% for item in items %}				## For item in items print in html paragraph each item
+	<p>{{ item }}</p>
+{% endfor %}
+
+<dl>								## With dictionaries add key and values to html table
+{% for key, value in dict.items() %}
+    <dt>{{ key|e }}</dt>
+    <dd>{{ value|e }}</dd>
+{% endfor %}
+</dl>
+
+<ul>								## With else
+{% for item in items %}
+    <li>{{ item.attr }}</li>
+{% else %}
+    <li>No items with this attribute found</li>
+{% endfor %}
+</ul>
+
+Escaping:
+---------
+{{ '{{' }}							## Ignore parts
+
+{% raw %}
+    <ul>
+    {% for item in items %}
+        <li>{{ item }}</li>
+    {% endfor %}
+    </ul>
+{% endraw %}						## This can be used as snippet (Ignored)
+
+Line statements:
+----------------
+# for item in items:
+    <li>{{ item }}</li> 		    ## This is a comment (Ignored)
+# endfor
+
+Template Inheritance:
+---------------------
+{% block %}
+{% endblock %}						## Use this code block from child template
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% block headvar %}				## Head variable here
+    <link rel="stylesheet" href="style.css" />
+    <title>{% block titlevar %}{% endblock %}MyTitle</title>
+    {% endblock %}
+</head>
+
+Child template:
+---------------
+{% extends "layout.html" %}			## Use layout.html (Can be footer, header etc.) 
+{% block title %}Title{% endblock %}
+{% block header %}
+	{{ url_for('static', 'style.css' }}
+{% endblock %}
+{% block body %}
+{% endblack %}
+
+{% extend "layout/default.html" %}	## file and path
+
+
+
+Extend this cheatsheet from here - https://jinja.palletsprojects.com/en/master/templates/ 
