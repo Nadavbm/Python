@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+	<meta name="viewport" content="width=device-width">
+	<meta charset="utf-8">
+</head>
+<body>
+    <section id="showcase">
+		<div class="container">
+			<h2>You are looking at About page</h2>
+			<p>Which is coming from about function</p>
+		</div>
+	</section>
+	<footer>
+		<div class="container">
+			<div id="logo">
+				<h5>MySite</h5>
+			</div>
+			<nav>
+				<ul>
+					<li><a href="{{ url_for('home') }}">Home</a><li>
+                    <li><a href="{{ url_for('about') }}">About</a><li>
+                    <li><a href="{{ url_for('contact') }}">Contact</a><li>
+				<ul>
+			</nav>
+		</div>
+	</footer>
+</body>
+</html>
+
+
