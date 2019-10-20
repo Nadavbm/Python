@@ -5,10 +5,5 @@ services:
    ports:
      - "5000:5000"
    volumes:
-     - .:/flask/html/app
-   depends_on:
-     - redis
-
-  redis:
-   image: redis
+     - .:/flask/html/extended/app
 

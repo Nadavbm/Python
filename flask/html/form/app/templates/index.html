@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>  
+  <title>HTML FORM</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head> 
+<html>
+<body>
+  <h1>HTML-FLASK FORM</h1>
+  <p>Shalom laBenadam ha {{ visitor }} SheRoeh et haFlask HaBeseder Haze</p>
+  <h3>Give your address and I'll get you the coordinates for it</h3>
+  <form action= "http://localhost:5000/address" method = "POST">
+	<p>Street <input type = "text" name = "Street" /></p>
+	<p>Number <input type = "text" name = "Number" /></p>
+	<p>City <input type = "text" name = "City" /></p>
+	<p>Country <input type = "text" name = "Country" /></p>
+	<p><input type = "submit" value = "submit" /></p>
+  </form>
+</body>
+</html>
