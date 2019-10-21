@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <ul>
+	{% for person in people %}
+		{% for key, value in person.items() %}
+			<li>{{ key }}:{{ value }}</li>
+		{% endfor %}
+	{% endfor %}
+  </ul>
+</body>
+</html>
