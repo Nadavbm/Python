@@ -1,0 +1,18 @@
+<!-- index.html -->
+{% extends 'layout.html' %}
+
+{% block content %}
+	<section id="showcase">
+		<div class="container">
+			<h2>You are at Home page</h2>
+			<p>Here is a table:</p>
+			<table>
+			{% for item in items %}
+				<tr>
+					<td>{{ itme }}</td>
+				</tr>
+			{% endfor %}
+		</div>
+	</section>
+{% endblock %}
+
