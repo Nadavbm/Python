@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+	<meta name="viewport" content="width=device-width">
+	<meta charset="utf-8">
+</head>
+<body>
+	{% with messages = get_flashed_messages(with_categories=true) %}
+		{% if messages %}
+		<ul>
+			{% for message in messages %}
+			<li>{{ message[1] }}</li>
+			{% endfor %}
+		{% endif %}
+	{% endwith %}
+
+	{% block content %}{% endblock %}
+</body>
+</html>
