@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>WTFORM template</title>
+<head>
+
+<body>
+{% with messages = get_flashed_messages(with_categories=true) %}
+	{% if messages %}
+	<ul>
+		{% for message in messages %}
+		<li>{{ message[1] }}</li>
+		{% endfor %}
+	{% endif %}
+{% endwith %}
+
+	<form action="" method='post'>
+		{{ form.name.label }}{{ form.name }}
+		<input type="submit" value="submit">
+	</form>
+</body>
+</html>
