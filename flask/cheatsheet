@@ -1,0 +1,75 @@
+"""Flask cheatsheet
+================"""
+
+from flask import Flask
+
+"""Templates
+========="""
+from flask import Flask, url_for, render_template, redirect, request, flash
+
+app = Flask(__name__, static_url_path='', static_folder="static", template_folder="templates")
+
+"""Routing
+======="""
+
+app.route('/', methods=['GET', 'POST'])
+def home():
+	variable = someClassOrFunctionReturn()
+	return render template('index.html', variable=variable)
+
+
+"""SQLAlchemy
+=========="""
+from flask_sqlalchemy import SQLAlchemy
+
+
+
+
+"""WTForms
+======="""
+
+from wtforms import Form, StringField, PasswordField, validators, SubmitField, SelectField
+from wtforms.validators import ValidationError, DataRequired, Email, EqualTo, Length
+
+# Pattern:
+[VARIABLE] = [FieldType]('[LABEL]', [
+        validators.[VALIDATOR TYPE](message=('[VALIDATOR ERROR'))])
+
+class SomeForm(Form):
+	name = StringField('Name', [validators.DataRequired(message=('Enter your name'))
+	email = StringField('Email', [Length(min=8), Email(message=('Enter valid email address'), DataRequired()])
+	password = PasswordField('Password', validators=[DataRequired(message='Enter a password')]) 
+	confirm = PasswordField('Confirm Password', validators=[EqualTo(password, message='Passwords not match')])
+
+	def validateEmail(self, email):
+		user = User.query.filter_by(email=email.data).first()
+		if user is not None:
+			raise ValidationError('This email already being used')
+
+#Jinja representation
+
+<form method=post>
+	{{ form.name }} {{ form.name.label }}
+	{% if form.name.erros %}
+		<ul>
+			{% for error in form.name.errors %}
+			<li>{{ error }}</li>
+			{% endfor %}
+		</ul>
+	{% endif %}
+	{{ form.email }} {{ form.email.label }}
+	{% if form.email.errors %}
+		<ul>
+			{% for error in form.name.erros %}
+			<li>{{ error }}</li>
+			{% endfor %}
+		</ul>
+	{% endif %}
+	<input type="submit" value="submit">
+</form>
+
+{% for message in get_flashed_messages() %}
+{{ message }}
+{% endfor %}
+
+
