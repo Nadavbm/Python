@@ -1,0 +1,12 @@
+<!-- index.html -->
+{% extends 'layout.html' %}
+
+{% block content %}
+<section id="showcase">
+	<div class="container">
+		<h1>Welcome to our cool company<br>which we should have name for but...<br> we don't.. </h1>
+		<p>You can sign up here: </p>
+		<a href="{{ url_for('signup') }}">Sign Up</a>
+	</div>
+</section>
+{% endblock %}
