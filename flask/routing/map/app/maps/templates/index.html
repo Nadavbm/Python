@@ -1,0 +1,14 @@
+<!-- index.html -->
+{% extends 'layout.html' %}
+
+{% block content %}
+	<section id="showcase">
+		<div class="container">
+			<form action="{{ url_for('map', city=request.form['city']) }}" method='post'>
+				{{ form.city.label }} {{ form.city }}
+				<input type=submit value=submit>
+			</form>
+		</div>
+	</section>
+{% endblock %}
+

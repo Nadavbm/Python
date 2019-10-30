@@ -1,0 +1,13 @@
+version: '2'
+services:
+  web:
+   build: .
+   ports:
+     - "5000:5000"
+   volumes:
+     - .:/flask/routing/map/app
+   dns:
+     - 8.8.8.8
+     - 8.8.4.4
+
+

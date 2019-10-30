@@ -1,0 +1,14 @@
+<!-- index.html -->
+{% extends 'layout.html' %}
+
+{% block content %}
+	<section id="showcase">
+		<div class="container">
+			<h2>The city you choose: {{ city }}</h2>
+			<p>This is a Google maps map:</p>
+			<img src="https://maps.googleapis.com/maps/api/staticmap?size=700x300&markers={{ city }}" alt="map of {{ city }}">
+			<img src="https://maps.googleapis.com/maps/api/streetview?size=700x300&city={{ city }}" alt="street view of {{ city }}">
+		</div>
+	</section>
+{% endblock %}
+
