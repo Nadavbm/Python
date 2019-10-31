@@ -1,0 +1,35 @@
+<!-- index.html -->
+{% extends 'layout.html' %}
+
+{% block content %}
+	<section id="showcase">
+		<div class="container">
+			<h2>Here is the table you created:</h2>
+			<table>
+			<thead>
+				<tr>
+					<th>ID</th>
+					<th>Name</th>
+					<th>Street</th>
+					<th>Number</th>
+					<th>City</th>
+					<th>Country</th>
+				</tr>
+			</thead>
+			<tbody>	
+			{% for item in address %}
+				<tr>
+					<td>{{ item.id }}</td>
+					<td>{{ item.name }}</td>
+                    <td>{{ item.street }}</td> 
+                    <td>{{ item.number }}</td> 
+                    <td>{{ item.city }}</td> 
+                    <td>{{ item.country }}</td> 
+				</tr>
+			{% endfor %}
+			</tbody>
+			</table>
+		</div>
+	</section>
+{% endblock %}
+
