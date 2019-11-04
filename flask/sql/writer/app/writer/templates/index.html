@@ -1,0 +1,36 @@
+<!-- index.html -->
+{% extends 'layout.html' %}
+
+{% block content %}
+	<section id="showcase">
+		<div class="container">
+			<h2>Fill the form:</h2>
+			<form method=post>
+				{{ form.name.label }} {{ form.name }}
+				{{ form.country.lable }} {{ form.country }}	
+				<br>
+				{{ form.submit }}
+			</form>
+			<h2>Database data arrange in a table:</h2>
+			<table>
+			<thead>
+				<tr>
+					<th>ID</th>
+					<th>Name</th>
+					<th>Country</th>
+				</tr>
+			</thead>
+			<tbody>	
+			{% for item in name %}
+				<tr>
+					<td>{{ item.id }}</td>
+					<td>{{ item.name }}</td>
+                    <td>{{ item.country }}</td> 
+				</tr>
+			{% endfor %}
+			</tbody>
+			</table>
+		</div>
+	</section>
+{% endblock %}
+
