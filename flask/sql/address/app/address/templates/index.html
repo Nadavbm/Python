@@ -1,0 +1,49 @@
+<!-- index.html -->
+{% extends 'layout.html' %}
+
+{% block content %}
+	<section id="showcase">
+		<div class="container">
+			<h2>Fill the form:</h2>
+			<form method=post>
+				{{ form.name.label }} {{ form.name }}
+				<br>
+				{{ form.street.label }} {{ form.street }}	
+				<br>
+				{{ form.number.label }} {{ form.number }}
+				<br>
+				{{ form.city.label }} {{ form.city }}
+				<br>
+				{{ form.country.label }} {{ form.country }}
+				<br>
+				{{ form.submit }}
+			</form>
+			<h2>Database data arrange in a table:</h2>
+			<table>
+			<thead>
+				<tr>
+					<th>ID</th>
+					<th>Name</th>
+					<th>Street</th>
+					<th>Number</th>
+					<th>City</th>
+					<th>Country</th>
+				</tr>
+			</thead>
+			<tbody>	
+			{% for item in data %}
+				<tr>
+					<td>{{ item.id }}</td>
+					<td>{{ item.name }}</td>
+					<td>{{ item.street }}</td>
+					<td>{{ item.number }}</td>
+					<td>{{ item.city }}</td>
+                    <td>{{ item.country }}</td> 
+				</tr>
+			{% endfor %}
+			</tbody>
+			</table>
+		</div>
+	</section>
+{% endblock %}
+
