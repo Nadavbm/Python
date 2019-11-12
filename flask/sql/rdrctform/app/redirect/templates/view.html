@@ -1,0 +1,29 @@
+<!-- index.html -->
+{% extends 'layout.html' %}
+
+{% block content %}
+	<section id="showcase">
+		<div class="container">
+			<h2>Table of all the users who logged in here:</h2>
+			<table>
+			<thead>
+				<tr>
+					<th>ID</th>
+					<th>Name</th>
+					<th>Email</th>
+				</tr>
+			</thead>
+			<tbody>	
+			{% for item in user %}
+				<tr>
+					<td>{{ item.id }}</td>
+					<td>{{ item.username }}</td>
+					<td>{{ item.email }}</td>
+				</tr>
+			{% endfor %}
+			</tbody>
+			</table>
+		</div>
+	</section>
+{% endblock %}
+

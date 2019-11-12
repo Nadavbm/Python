@@ -1,0 +1,19 @@
+<!-- add.html -->
+{% extends 'layout.html' %}
+
+{% block content %}
+<section id="showcase">
+	<div class="container">
+		<h2>Adding users to a list</h2>
+		<p>Fill the form and add a new username to the list</p>
+		<form  method='post'>
+			{{ form.username.label }} {{ form.username }}
+			<br>
+			{{ form.email.label }} {{ form.email }}
+			<br>
+			{{ form.submit }}
+		</form>
+	</div>
+</section>
+
+{% endblock %} 
