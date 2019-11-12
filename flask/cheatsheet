@@ -3,14 +3,12 @@
 
 from flask import Flask
 
-"""Templates
-========="""
+"""Templates and routing
+====================="""
 from flask import Flask, url_for, render_template, redirect, request, flash
 
 app = Flask(__name__, static_url_path='', static_folder="static", template_folder="templates")
 
-"""Routing
-======="""
 app/routes.py /app/views.py
 
 @app.route('/')
@@ -38,8 +36,8 @@ from flask_sqlalchemy import SQLAlchemy
 class User(db.Model):
 	__tablename__ = "User"
 	id = db.Column(db.Integer, primary_key=True)
-	name = db.Column(db.String(50))
-	email = db.Column(db.String(80))
+	name = db.Column(db.String(50), nullable=False)
+	email = db.Column(db.String(80), uniqueu=False)
 
 	def __init__(self, name, email):
 		self.name = name
@@ -70,10 +68,11 @@ from flask_wtf import FlaskForm
         validators.[VALIDATOR TYPE](message=('[VALIDATOR ERROR'))])
 
 class SomeForm(Form):
-	name = StringField('Name', [validators.DataRequired(message=('Enter your name'))
+	name = StringField('Name', [validators.DataRequired(message=('Enter your name')), filters = [lambda x: x or None])
 	email = StringField('Email', [Length(min=8), Email(message=('Enter valid email address'), DataRequired()])
 	password = PasswordField('Password', validators=[DataRequired(message='Enter a password'), Length(min=8]) 
 	confirm = PasswordField('Confirm Password', validators=[EqualTo(password, message='Passwords not match')])
+	country = StringField('Country', filters = [lambda x: x or None])
 
 	def validateEmail(self, email):
 		user = User.query.filter_by(email=email.data).first()
